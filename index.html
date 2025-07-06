@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/index.css" />
+    <link
+      rel="shortcut icon"
+      href="/public/logo/logo.ico"
+      type="image/x-icon" />
     <title>Cortesini tetti</title>
   </head>
   <body>
@@ -12,9 +16,7 @@
         <ul>
           <li>
             <div class="logo">
-              <b>CORTESINI</b>
-              <br />
-              TETTI
+              <img src="/public/logo/logo.png" alt="LOGO" />
             </div>
           </li>
           <li>
@@ -27,7 +29,7 @@
       </nav>
     </header>
     <main>
-      <section class="container" id="hero">
+      <section id="hero" class="container">
         <div class="text">
           <h1>Tetti puliti per prevenire danni e umidità</h1>
           <p>
@@ -42,9 +44,6 @@
       </section>
       <section id="statement">
         <div class="text">
-          <div>
-            <h2>Lavori personalizzati</h2>
-          </div>
           <div>
             <h2>Soluzioni veloci</h2>
             <p>anche in 24 ore</p>
@@ -154,15 +153,40 @@
           </div>
         </div>
       </section>
-      <section id="testimonial">
-        <i>
-          "Dopo faticosa ricerca abbiamo trovato cortesia, puntualità e
-          soprattutto una grande professionalità. Hanno pulito grondaie, tetto e
-          pannelli fotovoltaici, inserito dissuasori. Tutto in sicurezza e con
-          strumenti innovativi."
-        </i>
-        <p>- Bruna Clementini, Roma -</p>
+
+      <section id="testimonial-carousel">
+        <div class="testimonial-track">
+          <div class="testimonial-item">
+            <i>
+              "Dopo faticosa ricerca abbiamo trovato cortesia, puntualità e
+              soprattutto una grande professionalità. Hanno pulito grondaie,
+              tetto e pannelli fotovoltaici, inserito dissuasori. Tutto in
+              sicurezza e con strumenti innovativi."
+            </i>
+            <p>- Bruna Clementini, Roma -</p>
+          </div>
+          <div class="testimonial-item">
+            <i>
+              "Servizio eccellente. Precisi, veloci e professionali. Li
+              consiglio vivamente!"
+            </i>
+            <p>- Marco Rinaldi, Firenze -</p>
+          </div>
+          <div class="testimonial-item">
+            <i>
+              "Hanno risolto un problema che altri non erano riusciti a
+              sistemare. Ottimo lavoro!"
+            </i>
+            <p>- Alessia Bianchi, Milano -</p>
+          </div>
+        </div>
+
+        <button class="carousel-prev" aria-label="Previous testimonial">
+          ‹
+        </button>
+        <button class="carousel-next" aria-label="Next testimonial">›</button>
       </section>
+
       <section id="form">
         <h4>Inviaci la tua richiesta</h4>
         <form>
@@ -214,22 +238,39 @@
       </section>
     </main>
     <footer>
-      <div class="container">
-        <div class="content">
-          <p>Pagine</p>
-          <ul>
-            <li>Chi siamo</li>
-            <li>Termini e Condizioni</li>
-            <li>Privacy & Cookie Policy</li>
-          </ul>
-        </div>
-        <br />
-        <div class="data">
-          <p>P.IVA 123456789</p>
-          <p>Via Anonima 12, Monterotondo 00015, Roma</p>
-          <p>&#xa9; 2025 Tutti i diritti sono riservati.</p>
-        </div>
+      <div class="data">
+        <p>P.IVA 123456789</p>
+        <p>Via Anonima 12, Monterotondo 00015, Roma</p>
+        <p>&#xa9; 2025 Tutti i diritti sono riservati.</p>
       </div>
     </footer>
+    <script>
+      const track = document.querySelector(".testimonial-track");
+      const items = document.querySelectorAll(".testimonial-item");
+      const prevBtn = document.querySelector(".carousel-prev");
+      const nextBtn = document.querySelector(".carousel-next");
+
+      let index = 0;
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      function next() {
+        index = (index + 1) % items.length;
+        updateCarousel();
+      }
+
+      function prev() {
+        index = (index - 1 + items.length) % items.length;
+        updateCarousel();
+      }
+
+      nextBtn.addEventListener("click", next);
+      prevBtn.addEventListener("click", prev);
+
+      // Optional autoplay
+      setInterval(next, 6000);
+    </script>
   </body>
 </html>

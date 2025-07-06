@@ -42,8 +42,7 @@ body {
 
   h1,
   h2,
-  h3,
-  .logo {
+  h3 {
     line-height: 1.1;
     font-weight: 700;
   }
@@ -71,29 +70,16 @@ h4 {
   font-size: 1.75rem;
 }
 
-.secondary-button {
-  border: 1px solid var(--clr-light-black);
-  border-radius: 2em;
-  width: fit-content;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  img {
-    width: auto;
-  }
-}
-
 header > nav > ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--clr-dark-white);
 }
 
 ul {
@@ -112,13 +98,12 @@ b {
 
 #hero {
   display: grid;
-
+  gap: 1.5rem;
   .text {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     justify-content: center;
-    padding: 3rem 0;
 
     h1 {
       max-width: 38rem;
@@ -181,8 +166,7 @@ b {
   .card {
     padding: 3rem 0;
     border-radius: 0.75rem;
-    border: 1px solid var(--clr-light-black);
-    background-color: hsl(199, 75%, 98%);
+    background-color: var(--clr-white);
 
     .card-right,
     .card-left {
@@ -200,19 +184,70 @@ b {
   }
 }
 
-#testimonial {
+#testimonial-carousel {
   background-color: #ebe1cd;
   padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.testimonial-item {
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  i {
-    width: 85%;
-    font-weight: 700;
-    text-align: center;
-    font-size: 1.6875rem;
-    margin-bottom: 2.125rem;
-  }
+  text-align: center;
+}
+
+.testimonial-item i {
+  font-weight: 700;
+  font-size: 1.6875rem;
+  width: 85%;
+  margin-bottom: 2.125rem;
+  display: block;
+  font-style: italic;
+  color: #2e1e14;
+}
+
+.testimonial-item p {
+  color: #2e1e14;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Frecce */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #2e1e14;
+  cursor: pointer;
+  padding: 0 1rem;
+  z-index: 1;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  color: #000;
+}
+
+.carousel-prev {
+  left: 0;
+}
+.carousel-next {
+  right: 0;
 }
 
 #form {
@@ -266,27 +301,42 @@ b {
   font-weight: 700;
 }
 
+.logo {
+  max-width: 72px;
+}
+
 footer {
   font-size: 0.875rem;
-  padding: 3rem 0.25rem 0.25rem 0.25rem;
+  padding: 1rem;
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    background-color: #e7b75f;
-    border-top-left-radius: 0.75rem;
-    border-top-right-radius: 0.75rem;
-    border-radius: 0.75rem;
-  }
-
-  div {
-    margin-top: auto;
-  }
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
 
   .content {
     p {
       font-weight: 700;
     }
+  }
+}
+
+a {
+  border: 1px solid var(--clr-light-black);
+  border-radius: 2em;
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  img {
+    width: auto;
   }
 }
 
