@@ -98,7 +98,8 @@ b {
 
 #hero {
   display: grid;
-  gap: 1.5rem;
+  row-gap: 8vw;
+  column-gap: 1rem;
   .text {
     display: flex;
     flex-direction: column;
