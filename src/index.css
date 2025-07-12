@@ -84,6 +84,10 @@ header {
   top: 0;
   z-index: 1000;
   background-color: var(--clr-dark-white);
+
+  a.email {
+    display: none;
+  }
 }
 
 ul {
@@ -96,7 +100,7 @@ b {
 
 .container {
   padding: 0.75rem 1rem;
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
 }
 
@@ -136,6 +140,28 @@ b {
     height: fit-content;
     display: flex;
     align-items: center;
+  }
+}
+
+#second-hero {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+
+  h1 {
+    margin: 16px 0 4px 0;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    column-gap: 3.3rem;
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 }
 
@@ -348,6 +374,7 @@ footer {
 
   .links {
     width: 50%;
+    max-width: 200px;
     a {
       padding: 8px;
       border: 1px solid var(--clr-white);
@@ -357,10 +384,80 @@ footer {
   }
 }
 
+.classic-href {
+  padding: 0;
+  display: inline;
+  font-size: inherit;
+  text-decoration: var(--clr-white) wavy underline;
+  border: 0;
+}
+
+#info {
+  padding: 28px 0 0 0;
+  background-color: #e7b75f;
+  .container {
+    h2 {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+  }
+  a:not(.classic-href) {
+    background-color: var(--clr-accent);
+  }
+
+  .closing {
+    text-align: end;
+    min-height: 135px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    li {
+      margin-bottom: 28px;
+      p {
+        margin-bottom: 12px;
+      }
+      a {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
 @media (width >= 768px) {
+  header {
+    a.email {
+      display: flex;
+    }
+    a.call {
+      display: none;
+    }
+  }
   #hero {
     grid-template-columns: 1fr 1fr;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 2.255 / 1;
+  }
+
+  #second-hero {
+    padding-bottom: 3%;
+    .content {
+      flex-direction: row;
+      .text {
+        max-width: 40%;
+      }
+      img {
+        max-width: 30%;
+      }
+    }
   }
   #statement {
     .text {

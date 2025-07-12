@@ -20,10 +20,16 @@
             </div>
           </li>
           <li>
-            <a class="secondary-button" href="tel:+393883674619">
-              <img src="./src/icons/call.svg" alt="Cornetta" />
+            <a class="secondary-button call" href="tel:+393883674619">
+              <img src="./src/icons/call.svg" alt="Chiamaci al cellulare" />
               <span>Chiamaci</span></a
             >
+            <a
+              class="secondary-button email"
+              href="mailto:info@cortesinitetti.com">
+              <img src="./src/icons/email.svg" alt="Scrivici una email" />
+              <span>Scrivici</span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -39,7 +45,9 @@
           <a href="#form">Chiedi un preventivo</a>
         </div>
         <div class="img">
-          <img src="./src/images/cortesini_brothers.webp" alt="" />
+          <img
+            src="./src/images/cortesini_brothers_3.webp"
+            alt="Fratelli Cortesini" />
         </div>
       </section>
       <section id="statement">
@@ -265,8 +273,8 @@
             <input required id="email" type="text" />
           </div>
           <div class="field">
-            <label for="phone">Telefono</label>
-            <input id="phone" type="text" />
+            <label for="phone">Telefono*</label>
+            <input required id="phone" type="text" />
           </div>
           <div class="field">
             <p>Di quale servizio hai bisogno?</p>
@@ -314,7 +322,7 @@
       </div>
       <div class="links">
         <a href="/chisiamo.html">
-          Scopri di più su di noi
+          Chi siamo
           <img
             src="./src/icons/arrow_up_right.svg"
             alt="Cliccando qui si cambia pagina" />
