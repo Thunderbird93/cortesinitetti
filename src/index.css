@@ -428,6 +428,7 @@ footer {
       }
       a {
         margin-left: auto;
+        margin-bottom: 8px;
       }
     }
   }
